@@ -3,33 +3,44 @@ package org.company.Model;
 /**
  * Created by marco on 9/5/17.
  */
-public enum Escuderia {
-    Mercedes,
-    RedBull,
-    Ferrari,
-    ForceIndia,
-    Williams,
-    McLaren,
-    ToroRosso,
-    Haas,
-    Renault,
-    Sauber;
-
-    private final String tipoEscuderia;
+public class Escuderia {
+    private int posicion;
+    private TipoEscuderia tipoEscuderia;
 
     // Constructores
 
-    Escuderia() {
-        tipoEscuderia = "Sin escudería";
+    public Escuderia() {
     }
 
-    Escuderia(String tipoEscuderia) {
+    public Escuderia(int posicion, TipoEscuderia tipoEscuderia) {
+        this.posicion = posicion;
         this.tipoEscuderia = tipoEscuderia;
     }
 
     // Accesores
 
-    public String getTipoEscuderia() {
+
+    public TipoEscuderia getTipoEscuderia() {
         return tipoEscuderia;
     }
+
+    public void setTipoEscuderia(TipoEscuderia tipoEscuderia) {
+        this.tipoEscuderia = tipoEscuderia;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(char posicion) {
+        this.posicion = posicion;
+    }
+
+    @Override
+    public String toString() {
+        return "Escuderia: " +
+                "tipoEscuderia = " + tipoEscuderia +
+                "," + " posicion = " + posicion;
+    }
 }
+
